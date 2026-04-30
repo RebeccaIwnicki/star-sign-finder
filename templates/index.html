@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Star Sign Finder</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Imperial+Script&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="page">
+            <header class="title">
+                <img class="sun" src="{{ url_for('static', filename='sun.png') }}" alt="Illustration of sun, moon and stars">
+                <h2>Find My...</h2>
+                <h1>Star Sign</h1>
+            </header>
+            <main class="card">
+                <form method="POST" class="form">
+                    <input name="day" placeholder="Day (1-31)" type="number" required>
+                    <input name="month" placeholder="Month (1-12)" type="number" required>
+                <button type="submit">Find My Sign</button>
+                </form>
+                {% if sign %}
+                    <div class="result">
+                        <h2>Your star sign is: {{ sign}}</h2>   
+                    </div>
+                {% endif %} 
+            </main>
+            <div class="images">
+                <img class="dancer" src="{{ url_for('static', filename='dancer.png') }}" alt="black and white photo of a woman dancing with clouds around her head">
+                <img class="galaxy" src="{{ url_for('static', filename='galaxy.png') }}" alt="swirling galaxy illustration">
+            </div>
+        </div>
+    </body>
+</html>
