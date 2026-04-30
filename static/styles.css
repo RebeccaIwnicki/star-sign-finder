@@ -1,0 +1,143 @@
+
+
+body {
+    font-family:"DM Serif Display", serif; 
+    font-weight: 400;
+    color: #8C2E12;
+    background-color:#F7EDF0;
+    margin: 0;
+    height: auto;
+    overflow: hidden;
+}
+
+/* Layout container */
+.page {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(10px, 3vh, 30px);
+    height: 100vh;
+    margin: 30px;
+    padding: 10px;
+}
+
+/*Title*/
+.title {
+    text-align: center;
+    height: auto;
+}
+
+h1 {
+    font-family: "Imperial Script", cursive;
+    font-size: clamp(5rem, 9vw, 9rem);
+    font-weight: 400;
+    color: #D4793D;
+    text-shadow: 2px 2px 2px #8C2E12;
+    margin: 0;
+}
+
+h2 {
+    font-style: italic;
+    margin: 0;
+}
+
+.sun {
+    width: auto;
+    max-height: 10vh;
+    filter: drop-shadow(2px 2px #522331)
+}
+
+/* Main content */
+.card {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 600px;
+    max-height: 300px;
+    margin: 0;
+}
+
+/* Form*/
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+}
+
+input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-family: "Elms Sans", sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+button {
+    padding: 12px;
+    background: #D4793D;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #3F1508;
+    font-family: "Elms Sans", sans-serif;
+}
+
+/* Results */
+.result {
+    margin-top: 20px;
+}
+
+/* Images */
+.dancer {
+    height: 60%;
+    position: fixed;
+    left: 15vw;
+    bottom: 5vw;
+    z-index: -1;
+    filter: drop-shadow(2px 2px 1px #522331); 
+}
+
+.galaxy {
+    height: 100%;
+    position: fixed;
+    right: 5vw;
+    top: 0;
+    object-fit: cover;
+    z-index: -1;
+    filter: drop-shadow(2px 2px 1px #522331)
+}
+
+@media (max-width:1000px) {
+    .galaxy {
+        opacity: 0.3;
+    }
+    .dancer {
+        left: 5vw;
+    }
+}
+
+@media (max-width:900px) {
+    .dancer {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    body {
+        overflow: scroll;
+    }    
+    h1 {
+        color: #8C2E12;
+        text-shadow: 2px 2px 2px #D4793D;
+    }   
+    .card {
+        width: 100%;
+    }
+}
